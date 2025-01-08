@@ -4,7 +4,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone --recurse-submodules https://github.com/V-Sekai-fire/cog-vsk-trellis.git app",
+          "git clone --recurse-submodules https://github.com/microsoft/TRELLIS.git app",
         ]
       }
     },
