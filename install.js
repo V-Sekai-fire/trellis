@@ -1,6 +1,17 @@
 module.exports = {
   run: [
     {
+      method: "script.start",
+      params: {
+        uri: "torch.js",
+        params: {
+          venv: "env",
+          path: "app",
+          xformers: true
+        }
+      }
+    },
+    {
       method: "shell.run",
       params: {
         message: [
@@ -16,17 +27,6 @@ module.exports = {
         message: [          
           "uv pip install -U setuptools wheel ninja"
         ]
-      }
-    },
-    {
-      method: "script.start",
-      params: {
-        uri: "torch.js",
-        params: {
-          venv: "env",
-          path: "app",
-          xformers: true
-        }
       }
     },
     {
