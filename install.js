@@ -9,6 +9,16 @@ module.exports = {
       }
     },
     {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [          
+          "uv pip install -U setuptools wheel ninja"
+        ]
+      }
+    },
+    {
       method: "script.start",
       params: {
         uri: "torch.js",
@@ -24,17 +34,8 @@ module.exports = {
       params: {
         venv: "env",
         path: "app",
-        message: [          
-          "uv pip install -U setuptools wheel ninja"
-        ]
-      }
-    },
-    {
-      method: "shell.run",
-      params: {
-        venv: "env",
-        path: "app",
         message: [
+          "uv pip install torch",
           "uv pip install -r ../requirements.txt",
           "uv pip install huggingface_hub hf_transfer"
         ]
@@ -45,6 +46,14 @@ module.exports = {
       params: {
         venv: "app/env"             
       }
-    }
+    } //,
+    // {
+    //   method: "shell.run",
+    //   params: {
+    //     message: [
+    //       "echo Optimising pipeline script... && curl -o app/trellis/pipelines/trellis_image_to_3d.py https://raw.githubusercontent.com/0lento/TRELLIS/refs/heads/low-vram/trellis/pipelines/trellis_image_to_3d.py"
+    //     ]
+    //   }
+    // }
   ]
 };
