@@ -36,7 +36,7 @@ module.exports = {
         path: "app",
         message: [
           "uv pip install torch",
-          "uv pip install -r ../requirements.txt",
+          "uv pip install --no-build-isolation -r ../requirements.txt",
           "uv pip install huggingface_hub hf_transfer"
         ]
       }
