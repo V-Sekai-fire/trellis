@@ -1,25 +1,6 @@
 module.exports = {
   run: [
     {
-      method: "script.start",
-      params: {
-        uri: "torch.js",
-        params: {
-          venv: "env",
-          path: "app",
-          xformers: true
-        }
-      }
-    },
-    {
-      method: "shell.run",
-      params: {
-        message: [
-          "git clone --recurse-submodules https://github.com/microsoft/TRELLIS.git app",
-        ]
-      }
-    },
-    {
       method: "shell.run",
       params: {
         venv: "env",
@@ -37,6 +18,25 @@ module.exports = {
         message: [
           "uv pip install -r ../requirements.txt",
           "uv pip install huggingface_hub hf_transfer"
+        ]
+      }
+    },
+    {
+      method: "script.start",
+      params: {
+        uri: "torch.js",
+        params: {
+          venv: "env",
+          path: "app",
+          xformers: true
+        }
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        message: [
+          "git clone --recurse-submodules https://github.com/microsoft/TRELLIS.git app",
         ]
       }
     },
